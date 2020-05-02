@@ -8,7 +8,9 @@ Router.get("/:number/:from/:to",(req,res,next)=>{
         res.status(200).json({sucess:true,result:result})
         }
     catch(err){
-        res.json({success:false, message:err.message})
+        // res.json({success:false, message:err.message})
+        let customerror={status:416,message:err.message}
+        next(customerror)
        
     }
    
