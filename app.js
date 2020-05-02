@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var timeRouter=require("./routes/time")
 var temperatureRouter=require("./routes/temperature")
-
+var lengthRouter=require("./routes/length")
 var app = express();
 
 // view engine setup
@@ -28,6 +28,7 @@ app.use('/users', usersRouter);
 
 app.use("/time", timeRouter)
 app.use("/temperature", temperatureRouter)
+app.use("/length", lengthRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
